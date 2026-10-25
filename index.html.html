@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEDVERSE’26 | AURAMED – The Rhythm of Medical Innovation</title>
+  
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="MEDVERSE’26 is a National Level Biomedical Engineering Symposium organized by the Department of Biomedical Engineering, Faculty of Engineering and Technology, Dr. M.G.R. Educational and Research Institute on 4th and 5th November 2026.">
+  <meta name="keywords" content="MEDVERSE 26, AURAMED, Biomedical Engineering Symposium, National Level Symposium, Biomedical Engineering Events, MGRERI, Medical Innovation, Biomedical Technology, Pinnacle, Pitch Point">
+  <meta name="author" content="Department of Biomedical Engineering, Dr. M.G.R. Educational and Research Institute">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bme_mgreri.in">
+  <meta property="og:title" content="MEDVERSE’26 | AURAMED – The Rhythm of Medical Innovation">
+  <meta property="og:description" content="Official website for MEDVERSE’26 National Level Biomedical Engineering Symposium. Explore Technical & Non-Technical Events, Rule Book, Pricing, Payment, and Registration.">
+  <meta property="og:image" content="assets/medverse-logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MEDVERSE’26 | AURAMED – The Rhythm of Medical Innovation">
+  <meta name="twitter:description" content="Department of Biomedical Engineering presents MEDVERSE’26 National Level Symposium on 4th & 5th November 2026. Unified registration for all events.">
+  <meta name="twitter:image" content="assets/medverse-logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/medverse-logo.png">
+  <link rel="apple-touch-icon" href="assets/medverse-logo.png">
+
+  <!-- Google Fonts: Space Grotesk & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Space+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/ecg-aura.css">
+</head>
+<body>
+
+  <!-- Ambient Visual Canvas & Background Circuit Grid -->
+  <div class="ambient-canvas-container" aria-hidden="true">
+    <canvas id="ambient-canvas"></canvas>
+  </div>
+  <div class="circuit-overlay" aria-hidden="true"></div>
+
+  <!-- SVG Gradient Definitions for ECG Waveforms -->
+  <svg width="0" height="0" style="position:absolute;visibility:hidden" aria-hidden="true">
+    <defs>
+      <linearGradient id="ecg-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#0066FF" />
+        <stop offset="35%" stop-color="#00E5FF" />
+        <stop offset="70%" stop-color="#E5A93C" />
+        <stop offset="100%" stop-color="#00E5FF" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- 1. STICKY NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="nav-brand" aria-label="MEDVERSE'26 Home">
+        <img src="assets/medverse-logo.png" alt="MEDVERSE'26 Official Logo" class="nav-logo-img">
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">MEDVERSE’26</span>
+          <span class="nav-brand-theme">AURAMED</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#events" class="nav-link">Events</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#registration" class="nav-link">Registration</a>
+        <a href="#payment" class="nav-link">Payment</a>
+        <a href="#rulebook" class="nav-link">Rule Book</a>
+        <a href="#coordinators" class="nav-link">Coordinators</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://forms.gle/Rn2kv8f7kSNyDbkm8" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+          Register Now
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Open Mobile Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <button class="modal-close-btn" id="mobile-drawer-close" aria-label="Close Menu" style="top:2rem;right:2rem">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#events" class="nav-link">Events</a>
+    <a href="#pricing" class="nav-link">Pricing & Combos</a>
+    <a href="#registration" class="nav-link">Registration</a>
+    <a href="#payment" class="nav-link">Payment</a>
+    <a href="#whatsapp-section" class="nav-link">WhatsApp Groups</a>
+    <a href="#rulebook" class="nav-link">Rule Book</a>
+    <a href="#coordinators" class="nav-link">Coordinators</a>
+    <a href="#contact" class="nav-link">Contact</a>
+    <a href="https://forms.gle/Rn2kv8f7kSNyDbkm8" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:1rem">
+      Register Now
+    </a>
+  </div>
+
+  <main id="main-content">
+    <!-- 2. HERO SECTION -->
+    <section class="hero-section" id="home">
+      <!-- AURAMED Subtle Glowing Rings -->
+      <div class="aura-container aura-hero" aria-hidden="true">
+        <div class="aura-glow-core"></div>
+        <div class="aura-ring aura-ring-1"></div>
+        <div class="aura-ring aura-ring-2"></div>
+        <div class="aura-ring aura-ring-3"></div>
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-pretitle">
+          <span class="pulse-dot"></span>
+          NATIONAL LEVEL BIOMEDICAL ENGINEERING SYMPOSIUM
+        </div>
+
+        <div class="hero-logo-wrapper">
+          <img src="assets/medverse-logo.png" alt="MEDVERSE’26 Official Logo" class="hero-logo" width="380" height="auto">
+        </div>
+
+        <h1 class="hero-title-main">MEDVERSE’26</h1>
+
+        <div class="hero-theme-tagline">AURAMED</div>
+        <div class="hero-theme-subtagline">The Rhythm of Medical Innovation</div>
+
+        <div>
+          <div class="hero-dates-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E5A93C" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>4th & 5th November 2026</span>
+          </div>
+        </div>
+
+        <!-- Medical Monitor ECG Horizontal Trace -->
+        <div class="ecg-strip ecg-strip-hero" aria-hidden="true">
+          <svg class="ecg-svg" viewBox="0 0 1000 60" preserveAspectRatio="none">
+            <path class="ecg-glow-line" d="M0,30 L120,30 L135,30 L145,18 L155,42 L165,8 L178,54 L190,26 L200,32 L210,30 L340,30 L355,30 L365,18 L375,42 L385,8 L398,54 L410,26 L420,32 L430,30 L560,30 L575,30 L585,18 L595,42 L605,8 L618,54 L630,26 L640,32 L650,30 L780,30 L795,30 L805,18 L815,42 L825,8 L838,54 L850,26 L860,32 L870,30 L1000,30" />
+            <path class="ecg-path" d="M0,30 L120,30 L135,30 L145,18 L155,42 L165,8 L178,54 L190,26 L200,32 L210,30 L340,30 L355,30 L365,18 L375,42 L385,8 L398,54 L410,26 L420,32 L430,30 L560,30 L575,30 L585,18 L595,42 L605,8 L618,54 L630,26 L640,32 L650,30 L780,30 L795,30 L805,18 L815,42 L825,8 L838,54 L850,26 L860,32 L870,30 L1000,30" />
+          </svg>
+        </div>
+
+        <p class="hero-organizer-info">
+          <span class="hero-organizer-dept">Department of Biomedical Engineering</span><br>
+          Faculty of Engineering and Technology<br>
+          Dr. M.G.R. Educational and Research Institute
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="https://forms.gle/Rn2kv8f7kSNyDbkm8" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+            REGISTER NOW
+          </a>
+          <a href="#events" class="btn btn-secondary">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            EXPLORE EVENTS
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. COUNTDOWN SECTION -->
+    <section class="countdown-section" aria-label="Event Countdown">
+      <div class="container">
+        <div class="countdown-card-wrapper">
+          <div class="countdown-label" id="countdown-label-text">
+            <span class="pulse-dot"></span>
+            MEDVERSE’26 BEGINS IN
+          </div>
+
+          <div id="countdown-live-banner" class="countdown-live-banner">
+            MEDVERSE’26 IS LIVE
+          </div>
+
+          <div class="countdown-grid" id="countdown-grid">
+            <div class="countdown-box">
+              <span class="countdown-value" id="countdown-days">00</span>
+              <span class="countdown-unit">DAYS</span>
+            </div>
+            <div class="countdown-box">
+              <span class="countdown-value" id="countdown-hours">00</span>
+              <span class="countdown-unit">HOURS</span>
+            </div>
+            <div class="countdown-box">
+              <span class="countdown-value" id="countdown-minutes">00</span>
+              <span class="countdown-unit">MINUTES</span>
+            </div>
+            <div class="countdown-box">
+              <span class="countdown-value" id="countdown-seconds">00</span>
+              <span class="countdown-unit">SECONDS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. REGISTRATION CTA + QR SECTION -->
+    <section class="register-qr-section" id="registration">
+      <div class="container">
+        <div class="register-card-container">
+          <div class="register-info-content">
+            <span class="section-tag section-tag-gold">Official Registration & Payment Portal</span>
+            <h2>SCAN TO REGISTER</h2>
+            <p>Register for MEDVERSE’26 and be part of the rhythm of medical innovation. Unified registration and payment for <strong>ALL 8 events</strong> — including <strong>PITCH POINT</strong> (Paper Presentation) and <strong>PINNACLE</strong> (Poster Presentation), along with Case Quest, Brain Rot, Booyah, Pixel Arena, Aura Arts, and Meme-O-Mania.</p>
+            
+            <div class="register-steps-list">
+              <div class="register-step-item">
+                <span class="step-num">1</span>
+                <span class="step-text">Scan the QR code or tap the <strong>Register Now</strong> button below.</span>
+              </div>
+              <div class="register-step-item">
+                <span class="step-num">2</span>
+                <span class="step-text">Fill in your participant and college details in the official form.</span>
+              </div>
+              <div class="register-step-item">
+                <span class="step-num">3</span>
+                <span class="step-text">Select your individual events (including Pitch Point & Pinnacle) or high-value combo package.</span>
+              </div>
+              <div class="register-step-item">
+                <span class="step-num">4</span>
+                <span class="step-text">Complete the payment, upload proof, and join the respective event WhatsApp group!</span>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:1rem;flex-wrap:wrap">
+              <a href="https://forms.gle/Rn2kv8f7kSNyDbkm8" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+                REGISTER NOW (ALL EVENTS)
+              </a>
+              <a href="#payment" class="btn btn-secondary">
+                Payment Details & QR
+              </a>
+            </div>
+          </div>
+
+          <div class="qr-code-frame-wrapper">
+            <div class="qr-code-frame">
+              <canvas id="registration-qr-canvas" class="qr-canvas" width="240" height="240" aria-label="Official Registration QR Code"></canvas>
+            </div>
+            <div class="qr-helper-text">
+              <strong style="color:#ffffff">SCAN TO REGISTER & PAY</strong><br>
+              Direct Link: <a href="https://forms.gle/Rn2kv8f7kSNyDbkm8" target="_blank" rel="noopener noreferrer" style="color:var(--electric-cyan);text-decoration:underline">forms.gle/Rn2kv8f7kSNyDbkm8</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ABOUT MEDVERSE’26 & 6. AURAMED THEME -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text-block">
+            <span class="section-tag">About The Symposium</span>
+            <h2 class="section-title">Where Medicine Meets Engineering</h2>
+            <p>
+              MEDVERSE’26 is a National Level Technical Symposium organized by the Department of Biomedical Engineering, Faculty of Engineering and Technology, Dr. M.G.R. Educational and Research Institute.
+            </p>
+            <p>
+              The symposium brings together students and young innovators to explore biomedical engineering, medical technology, creativity, problem-solving and innovation.
+            </p>
+
+            <div class="theme-highlight-box">
+              <h4>AURAMED – The Rhythm of Medical Innovation</h4>
+              <p>
+                AURAMED represents the continuous rhythm of innovation in healthcare, where engineering, medicine and technology converge to create meaningful solutions for the future.
+              </p>
+            </div>
+          </div>
+
+          <!-- 4 Visual Highlights -->
+          <div class="highlights-cards-grid">
+            <div class="highlight-card">
+              <div class="highlight-icon-circle">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <h3>NATIONAL LEVEL</h3>
+              <p>Welcoming aspiring engineers and healthcare innovators across premier institutions nationwide.</p>
+            </div>
+
+            <div class="highlight-card">
+              <div class="highlight-icon-circle">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <h3>TECHNICAL EVENTS</h3>
+              <p>Paper presentations (Pitch Point), scientific posters (Pinnacle), case diagnosis (Case Quest), and rapid quizzes (Brain Rot).</p>
+            </div>
+
+            <div class="highlight-card">
+              <div class="highlight-icon-circle">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <h3>NON-TECHNICAL</h3>
+              <p>High-stakes esports gaming, photographic vision, face painting artistry, and meme-culture challenges.</p>
+            </div>
+
+            <div class="highlight-card">
+              <div class="highlight-icon-circle">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+              <h3>BIOMEDICAL INNOVATION</h3>
+              <p>Translating groundbreaking scientific thought into tangible, life-saving clinical applications.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. TECHNICAL & 8. NON-TECHNICAL EVENTS -->
+    <section class="events-section" id="events">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Competitions & Challenges</span>
+          <h2 class="section-title">Explore MEDVERSE’26 Events</h2>
+          <p class="section-subtitle">
+            Compete across our flagship technical arenas and dynamic creative challenges. All events (including Pitch Point & Pinnacle) feature direct online registration and event WhatsApp channels.
+          </p>
+        </div>
+
+        <!-- Segmented Tab Navigation -->
+        <div class="events-tabs-nav" role="tablist">
+          <button class="event-tab-btn active" data-category="all" role="tab">All Events (8)</button>
+          <button class="event-tab-btn" data-category="technical" role="tab">Technical Events (4)</button>
+          <button class="event-tab-btn" data-category="non-technical" role="tab">Non-Technical Events (4)</button>
+        </div>
+
+        <!-- Event Cards Container (Rendered dynamically via js/main.js) -->
+        <div class="events-cards-grid" id="events-cards-grid">
+          <!-- Populated by js/main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. EVENT PRICING & COMBOS -->
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag section-tag-gold">Fees & Value Packages</span>
+          <h2 class="section-title section-title-gold">Event Pricing & Combos</h2>
+          <p class="section-subtitle">
+            Transparent event fees with curated multi-event combo passes. Individual events are ₹75 per person.
+          </p>
+        </div>
+
+        <!-- Technical Events Pricing -->
+        <div class="pricing-block">
+          <h3 class="coord-group-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            Technical Events & Combos
+          </h3>
+          <div class="pricing-cards-grid" id="tech-pricing-grid">
+            <!-- Populated by js/main.js -->
+          </div>
+
+          <div class="separate-notice-box" style="border-style:solid;border-color:rgba(0,229,255,0.3);background:rgba(0,102,255,0.08)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <p>
+              <strong>Unified Technical Registration:</strong> All 4 Technical Events — <strong>Pitch Point</strong> (Paper Presentation), <strong>Pinnacle</strong> (Poster Presentation), <strong>Case Quest</strong>, and <strong>Brain Rot</strong> — are now registered and paid through the official MEDVERSE’26 portal!
+            </p>
+          </div>
+        </div>
+
+        <!-- Non-Technical Events Individual Pricing -->
+        <div class="pricing-block">
+          <h3 class="coord-group-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Non-Technical Individual Events
+          </h3>
+          <div class="pricing-cards-grid" id="non-tech-pricing-grid">
+            <!-- Populated by js/main.js -->
+          </div>
+        </div>
+
+        <!-- Non-Technical Combos -->
+        <div class="pricing-block">
+          <h3 class="coord-group-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Non-Technical Combo Packages
+          </h3>
+          <div class="pricing-cards-grid" id="combo-pricing-grid">
+            <!-- Populated by js/main.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. PAYMENT SECTION -->
+    <section class="payment-section" id="payment">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag section-tag-gold">Official Payment Gateway</span>
+          <h2 class="section-title section-title-gold">PAYMENT</h2>
+          <p class="section-subtitle">
+            Complete your payment and registration for ALL events (including <strong>Pitch Point</strong> & <strong>Pinnacle</strong>) using the official portal QR code below.
+          </p>
+        </div>
+
+        <div class="payment-grid">
+          <!-- Active Live Payment QR Card -->
+          <div class="qr-code-frame-wrapper" style="background:rgba(10,22,48,0.75);border:2px solid var(--metallic-gold);border-radius:var(--radius-xl);padding:3rem 2rem;box-shadow:var(--shadow-card), 0 0 35px rgba(229,169,60,0.2);backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;text-align:center">
+            <span class="section-tag section-tag-gold" style="margin-bottom:0.75rem">Scan to Pay & Register</span>
+            <h3 style="font-size:1.5rem;font-weight:900;color:#ffffff;margin-bottom:0.5rem">OFFICIAL PAYMENT QR</h3>
+            <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:1.5rem;max-width:320px">
+              Scan with any mobile device to open the official registration & payment portal for all technical and non-technical events.
+            </p>
+
+            <div class="qr-code-frame" style="border:3px solid var(--metallic-gold)">
+              <canvas id="payment-qr-canvas" class="qr-canvas" width="240" height="240" aria-label="Official Payment QR Code"></canvas>
+            </div>
+
+            <div class="qr-helper-text" style="margin-top:1.25rem;width:100%">
+              <div style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.85rem">
+                Covers: <strong>Pinnacle, Pitch Point, Case Quest, Brain Rot, Booyah, Pixel Arena, Aura Arts, Meme-O-Mania & Combos</strong>
+              </div>
+              <a href="https://forms.gle/Rn2kv8f7kSNyDbkm8" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-sm" style="width:100%;justify-content:center">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                OPEN PAYMENT & REGISTRATION FORM
+              </a>
+            </div>
+          </div>
+
+          <!-- Payment Instructions -->
+          <div class="payment-instructions-card">
+            <div>
+              <span class="section-tag section-tag-gold">Mandatory Payment Instructions</span>
+              <h3 style="font-size:1.5rem;font-weight:800;color:#ffffff;margin-top:0.5rem">Reference Details</h3>
+              <p style="color:var(--text-muted);font-size:0.95rem;margin-top:0.35rem">
+                While making the payment, participants should mention:
+              </p>
+
+              <div class="instructions-list">
+                <div class="instruction-point">
+                  <span class="instruction-bullet"></span>
+                  <span><strong>Participant name / team member name(s)</strong></span>
+                </div>
+                <div class="instruction-point">
+                  <span class="instruction-bullet"></span>
+                  <span><strong>College name</strong></span>
+                </div>
+                <div class="instruction-point">
+                  <span class="instruction-bullet"></span>
+                  <span><strong>Event name(s)</strong> (e.g. Pinnacle, Pitch Point, Case Quest, Booyah, or Combo package)</span>
+                </div>
+              </div>
+
+              <div style="font-size:0.92rem;color:var(--text-secondary);line-height:1.6;margin-top:1rem;background:rgba(255,255,255,0.03);padding:1rem;border-radius:var(--radius-sm)">
+                <em>"Please ensure that the payment details are entered correctly before submitting proof of payment."</em>
+              </div>
+            </div>
+
+            <!-- Proof of Payment -->
+            <div class="proof-alert-box">
+              <h4>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                PROOF OF PAYMENT
+              </h4>
+              <p>
+                After completing the payment, upload a screenshot of the payment confirmation as proof of payment in the form. Participants should ensure that their name and selected event(s) are clearly visible.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. WHATSAPP GROUPS SECTION -->
+    <section class="whatsapp-section" id="whatsapp-section">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag" style="background:rgba(37,211,102,0.1);color:#2ee571;border-color:rgba(37,211,102,0.3)">
+            Community & Coordination
+          </span>
+          <h2 class="section-title">JOIN YOUR EVENT WHATSAPP GROUP</h2>
+          <p class="section-subtitle">
+            After registration, join the WhatsApp group corresponding to your selected event for official announcements, queries, and schedule releases.
+          </p>
+        </div>
+
+        <div class="events-tabs-nav">
+          <button class="event-tab-btn whatsapp-tab-btn active" data-category="technical">Technical Events</button>
+          <button class="event-tab-btn whatsapp-tab-btn" data-category="non-technical">Non-Technical Events</button>
+        </div>
+
+        <div class="whatsapp-cards-grid" id="whatsapp-cards-grid">
+          <!-- Populated by js/main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. RULE BOOK -->
+    <section class="rulebook-section" id="rulebook">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Official Regulations</span>
+          <h2 class="section-title">EVENT RULE BOOK</h2>
+          <p class="section-subtitle">
+            Biomedical Engineering Department • 4th & 5th November 2026<br>
+            Theme: <strong>AURAMED – The Rhythm of Medical Innovation</strong>
+          </p>
+        </div>
+
+        <!-- General Rules (Verbatim) -->
+        <div class="general-rules-card">
+          <h3>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            General Symposium Rules
+          </h3>
+          <div class="general-rules-grid" id="general-rules-grid">
+            <!-- Populated by js/main.js -->
+          </div>
+        </div>
+
+        <!-- Search & Filter Controls -->
+        <div class="rulebook-actions-bar">
+          <div class="search-input-wrapper">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="rulebook-search" class="search-input" placeholder="Search event rules, criteria or keywords...">
+          </div>
+
+          <a href="assets/MEDVERSE26_Event_Rule_Book.pdf" download="MEDVERSE26_Event_Rule_Book.pdf" class="btn btn-secondary btn-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Official Rule Book (PDF)
+          </a>
+        </div>
+
+        <!-- Accordion for specific Event Rules -->
+        <div class="accordion-wrapper" id="rulebook-accordion-wrapper">
+          <!-- Populated by js/main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. EVENT COORDINATORS -->
+    <section class="coordinators-section" id="coordinators">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag section-tag-gold">Organizing Committee</span>
+          <h2 class="section-title section-title-gold">Symposium Coordinators</h2>
+          <p class="section-subtitle">
+            Get in touch with department faculty, staff coordinators, and student leads for queries and assistance.
+          </p>
+        </div>
+
+        <!-- Leadership (HOD) -->
+        <div style="max-width:480px;margin:0 auto 3rem;">
+          <div class="coord-card" id="coord-hod-card" style="text-align:center;border-color:var(--border-gold);">
+            <!-- Populated by js/main.js -->
+          </div>
+        </div>
+
+        <!-- Staff Coordinators -->
+        <h3 class="coord-group-title">Staff Coordinators</h3>
+        <div class="coord-grid-main" id="coord-staff-grid">
+          <!-- Populated by js/main.js -->
+        </div>
+
+        <!-- Student Coordinators -->
+        <h3 class="coord-group-title">Student Coordinators</h3>
+        <div class="coord-grid-main" id="coord-student-grid">
+          <!-- Populated by js/main.js -->
+        </div>
+
+        <!-- Event-Wise Staff Coordinators Table -->
+        <h3 class="coord-group-title" style="margin-top:2rem">Event-Wise Staff Coordinator Directory</h3>
+        <div class="event-staff-table-wrapper">
+          <table class="event-staff-table">
+            <thead>
+              <tr>
+                <th>Event Name</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Staff Coordinator</th>
+                <th>Role / Designation</th>
+              </tr>
+            </thead>
+            <tbody id="event-staff-table-body">
+              <!-- Populated by js/main.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. DEPARTMENT SECTION & CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card-wrapper">
+          <div class="dept-header-box">
+            <div class="dept-pretitle">PROUDLY PRESENTED BY</div>
+            <h2 class="dept-main-title">Department of Biomedical Engineering</h2>
+            <div class="dept-sub-title">Faculty of Engineering and Technology</div>
+            <div class="dept-inst-title">Dr. M.G.R. Educational and Research Institute</div>
+
+            <div style="display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-top:1.5rem">
+              <a href="https://bme_mgreri.in" target="_blank" rel="noopener noreferrer" class="dept-link-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                bme_mgreri.in
+              </a>
+              <span class="dept-link-pill" style="color:var(--metallic-gold-light);border-color:var(--border-gold)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Identity: Mgreri Bme
+              </span>
+            </div>
+          </div>
+
+          <div class="dept-contact-grid">
+            <div class="coord-card">
+              <div class="coord-role-badge">Head of Department</div>
+              <h4 class="coord-name">Dr. K. S. Thivya</h4>
+              <p class="coord-desc">Department of Biomedical Engineering</p>
+            </div>
+
+            <div class="coord-card">
+              <div class="coord-role-badge">Staff Coordinator</div>
+              <h4 class="coord-name">Dr. F. Fareeza</h4>
+              <p class="coord-desc">Department of Biomedical Engineering</p>
+              <a href="tel:+919962098599" class="coord-tel-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                +91 9962098599
+              </a>
+            </div>
+
+            <div class="coord-card">
+              <div class="coord-role-badge">Staff Coordinator</div>
+              <h4 class="coord-name">Ms. A. Hemapriya</h4>
+              <p class="coord-desc">Department of Biomedical Engineering</p>
+              <a href="tel:+918072194613" class="coord-tel-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                +91 8072194613
+              </a>
+            </div>
+
+            <div class="coord-card">
+              <div class="coord-role-badge">Student Coordinator</div>
+              <h4 class="coord-name">Robina Judith. R</h4>
+              <p class="coord-desc">Department of Biomedical Engineering</p>
+              <a href="tel:+919952980407" class="coord-tel-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                +91 9952980407
+              </a>
+            </div>
+
+            <div class="coord-card">
+              <div class="coord-role-badge">Student Coordinator</div>
+              <h4 class="coord-name">Renita Saffron.R</h4>
+              <p class="coord-desc">Department of Biomedical Engineering</p>
+              <a href="tel:+919363634375" class="coord-tel-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                +91 9363634375
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 15. FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-title">MEDVERSE’26</div>
+          <div class="footer-theme">AURAMED – The Rhythm of Medical Innovation</div>
+          <p class="footer-dept-info">
+            Department of Biomedical Engineering<br>
+            Faculty of Engineering and Technology<br>
+            Dr. M.G.R. Educational and Research Institute<br><br>
+            4th & 5th November 2026
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#registration">Registration</a></li>
+            <li><a href="#payment">Payment</a></li>
+            <li><a href="#rulebook">Rule Book</a></li>
+            <li><a href="#coordinators">Coordinators</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Official Portal</h4>
+          <ul class="footer-links-list">
+            <li><a href="https://bme_mgreri.in" target="_blank" rel="noopener noreferrer">Website: bme_mgreri.in</a></li>
+            <li><span style="color:var(--text-muted)">Identity: Mgreri Bme</span></li>
+            <li><a href="https://forms.gle/Rn2kv8f7kSNyDbkm8" target="_blank" rel="noopener noreferrer" style="color:var(--electric-cyan)">Register Now (All Events)</a></li>
+            <li><a href="assets/MEDVERSE26_Event_Rule_Book.pdf" download="MEDVERSE26_Event_Rule_Book.pdf">Download Rule Book</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 MEDVERSE’26 | Department of Biomedical Engineering. All Rights Reserved.
+        </div>
+        <div style="font-size:0.8rem;color:var(--text-dim)">
+          "Where medicine meets engineering, innovation finds its rhythm."
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Event Rules Modal (Accessible & Interactive) -->
+  <div class="modal-backdrop" id="event-rule-modal" role="dialog" aria-modal="true" aria-labelledby="modal-event-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeEventRuleModal()" aria-label="Close Rules Modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="event-badge-tag" id="modal-event-type">Challenge</span>
+        <h2 class="modal-event-title" id="modal-event-title">EVENT NAME</h2>
+        <div style="font-size:0.85rem;color:var(--text-muted)">
+          Team Size: <strong id="modal-event-team" style="color:#ffffff">--</strong> | Staff Coordinator: <strong id="modal-event-coordinator" style="color:var(--metallic-gold-light)">--</strong>
+        </div>
+      </div>
+
+      <p id="modal-event-description" style="font-size:0.95rem;color:var(--text-secondary);line-height:1.6;margin-bottom:1.5rem">
+        Event Description
+      </p>
+
+      <h4 style="font-size:1.05rem;font-weight:800;color:var(--electric-cyan);margin-bottom:0.75rem">Competition Rules:</h4>
+      <ul class="modal-rules-list" id="modal-rules-list">
+        <!-- Injected dynamically -->
+      </ul>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm" onclick="closeEventRuleModal()">
+          Close
+        </button>
+        <a href="#" id="modal-whatsapp-btn" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+          Join WhatsApp
+        </a>
+        <a href="#" id="modal-reg-btn" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+          Register
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Floating Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to Top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- JavaScript Modules -->
+  <script src="js/data.js"></script>
+  <script src="js/qr-generator.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
